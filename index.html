@@ -21,14 +21,25 @@
 
         <!-- Document-level style sheets -->
         <style>
-            body {
-                background-image: url("/images/logo.png");
+            .text-color-green {
+                color: #376c46;
+            }
+
+            #div-products {
+                background-color: #859088;
+                margin: 100px;
+            }
+            #div-categories {
+                background-color: #859088;
+                margin: 100px;
+            }
+            p,h5{
+                color: white;
             }
         </style>
     </head>
 
 <body>
-
 
     <header>
         <!-- place navbar here -->
@@ -58,9 +69,11 @@
                     <div class="col-lg-3 col-6 text-right" style="padding: 10px;">
 
                         <a href="cart.html" class="btn border" style="background-color: white;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                              </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-cart" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                            </svg>
                         </a>
                     </div>
                 </div>
@@ -69,6 +82,296 @@
     </header>
     <main>
 
+
+
+        <div id="header-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="height: 410px;">
+                    <img class="img-fluid" src="./images/pots-gdc1827781_192011.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 700px;">
+                            <h4 class="text-light text-uppercase text-color-green font-weight-medium mb-3">10% Off
+                                Your
+                                First Order</h4>
+                            <h3 class="display-4 text-white font-weight-semi-bold mb-4">High-Quality Plants</h3>
+                            <a href="#section2" class="btn btn-light py-2 px-3">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" style="height: 410px;">
+                    <img class="img-fluid" src="./images/nature-g1a33d2449_1920.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 700px;">
+                            <h4 class="text-light text-uppercase text-white font-weight-medium mb-3">10% Off Your
+                                First
+                                Order</h4>
+                            <h3 class="display-4 text-white font-weight-semi-bold mb-4">High-Quality Plants</h3>
+                            <a href="#section2" class="btn btn-light py-2 px-3">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
+                <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                    <span class="carousel-control-prev-icon mb-n2"></span>
+                </div>
+            </a>
+            <a class="carousel-control-next" href="#header-carousel" data-slide="next">
+                <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                    <span class="carousel-control-next-icon mb-n2"></span>
+                </div>
+            </a>
+        </div>
+
+        <div id="div-products">
+            <div class="container-fluid pt-5" id="section2">
+                <div class="text-center mb-4">
+                    <h2 class="section-title text-white px-5"><span class="px-2">Trandy Products</span></h2>
+                </div>
+                <div class="row px-xl-5 pb-3">
+                    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                        <div class="card product-item border-0 mb-4">
+                            <div
+                                class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                <img class="img-fluid w-100" src="./images/pg-adenium-lemon-ice-800x800.jpg" alt="">
+                            </div>
+                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                <h6 class="text-truncate mb-3">Adenium Yellow</h6>
+                                <div class="d-flex justify-content-center">
+                                    <h6>5.00 OMR </h6>
+                                    <h6 class="text-muted ml-2"><del> 10.00 OMR </del></h6>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between bg-light border">
+                                <a href="item_detail.html" class="btn btn-sm text-dark p-0"><i
+                                        class="fas fa-eye text-primary mr-1"></i>View
+                                    Detail</a>
+                                <a href="cart.html" class="btn btn-sm text-dark p-0"><i
+                                        class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                        <div class="card product-item border-0 mb-4">
+                            <div
+                                class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                <img class="img-fluid w-100" src="./images/pg-anthurium-pink-800x800.jpg" alt="">
+                            </div>
+                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                <h6 class="text-truncate mb-3">Anthurium Pink Plant </h6>
+                                <div class="d-flex justify-content-center">
+                                    <h6>5.00 OMR </h6>
+                                    <h6 class="text-muted ml-2"><del> 10.00 OMR </del></h6>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between bg-light border">
+                                <a href="item_detail.html" class="btn btn-sm text-dark p-0"><i
+                                        class="fas fa-eye text-primary mr-1"></i>View
+                                    Detail</a>
+                                <a href="cart.html" class="btn btn-sm text-dark p-0"><i
+                                        class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                        <div class="card product-item border-0 mb-4">
+                            <div
+                                class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                <img class="img-fluid w-100" src="./images/pg-streptophylla-hybrid-800x800.jpg" alt="">
+                            </div>
+                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                <h6 class="text-truncate mb-3">Streptophylla Hybrid</h6>
+                                <div class="d-flex justify-content-center">
+                                    <h6>5.00 OMR </h6>
+                                    <h6 class="text-muted ml-2"><del> 10.00 OMR </del></h6>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between bg-light border">
+                                <a href="item_detail.html" class="btn btn-sm text-dark p-0"><i
+                                        class="fas fa-eye text-primary mr-1"></i>View
+                                    Detail</a>
+                                <a href="cart.html" class="btn btn-sm text-dark p-0"><i
+                                        class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                        <div class="card product-item border-0 mb-4">
+                            <div
+                                class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                <img class="img-fluid w-100" src="./images/tillandsia-funckiana-air-plant-800x800.jpg" alt="">
+                            </div>
+                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                <h6 class="text-truncate mb-3">Tillandsia Funckiana</h6>
+                                <div class="d-flex justify-content-center">
+                                    <h6>5.00 OMR </h6>
+                                    <h6 class="text-muted ml-2"><del> 10.00 OMR </del></h6>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between bg-light border">
+                                <a href="item_detail.html" class="btn btn-sm text-dark p-0"><i
+                                        class="fas fa-eye text-primary mr-1"></i>View
+                                    Detail</a>
+                                <a href="cart.html" class="btn btn-sm text-dark p-0"><i
+                                        class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                        <div class="card product-item border-0 mb-4">
+                            <div
+                                class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                <img class="img-fluid w-100" src="./images/pg-ionantha-huamelula-maxima-air-plants-800x800.jpg" alt="">
+                            </div>
+                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                <h6 class="text-truncate mb-3">Ionantha Huamelula Maxima</h6>
+                                <div class="d-flex justify-content-center">
+                                    <h6>5.00 OMR </h6>
+                                    <h6 class="text-muted ml-2"><del> 10.00 OMR </del></h6>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between bg-light border">
+                                <a href="item_detail.html" class="btn btn-sm text-dark p-0"><i
+                                        class="fas fa-eye text-primary mr-1"></i>View
+                                    Detail</a>
+                                <a href="cart.html" class="btn btn-sm text-dark p-0"><i
+                                        class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                        <div class="card product-item border-0 mb-4">
+                            <div
+                                class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                <img class="img-fluid w-100" src="./images/pg-tillandsia-cyanea-800x800.jpg" alt="">
+                            </div>
+                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                <h6 class="text-truncate mb-3">Tillandsia Cyanea</h6>
+                                <div class="d-flex justify-content-center">
+                                    <h6>5.00 OMR </h6>
+                                    <h6 class="text-muted ml-2"><del> 10.00 OMR </del></h6>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between bg-light border">
+                                <a href="item_detail.html" class="btn btn-sm text-dark p-0"><i
+                                        class="fas fa-eye text-primary mr-1"></i>View
+                                    Detail</a>
+                                <a href="cart.html" class="btn btn-sm text-dark p-0"><i
+                                        class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                        <div class="card product-item border-0 mb-4">
+                            <div
+                                class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                <img class="img-fluid w-100" src="./images/anthurium-red-winner-800x800.jpg" alt="">
+                            </div>
+                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                <h6 class="text-truncate mb-3">Flamingo Flower</h6>
+                                <div class="d-flex justify-content-center">
+                                    <h6>5.00 OMR </h6>
+                                    <h6 class="text-muted ml-2"><del> 10.00 OMR </del></h6>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between bg-light border">
+                                <a href="item_detail.html" class="btn btn-sm text-dark p-0"><i
+                                        class="fas fa-eye text-primary mr-1"></i>View
+                                    Detail</a>
+                                <a href="cart.html" class="btn btn-sm text-dark p-0"><i
+                                        class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                        <div class="card product-item border-0 mb-4">
+                            <div
+                                class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                <img class="img-fluid w-100" src="./images/anthurium-andreanum-black-800x800.jpg" alt="">
+                            </div>
+                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                <h6 class="text-truncate mb-3">Anthurium Black</h6>
+                                <div class="d-flex justify-content-center">
+                                    <h6>5.00 OMR </h6>
+                                    <h6 class="text-muted ml-2"><del> 10.00 OMR </del></h6>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between bg-light border">
+                                <a href="item_detail.html" class="btn btn-sm text-dark p-0"><i
+                                        class="fas fa-eye text-primary mr-1"></i>View
+                                    Detail</a>
+                                <a href="cart.html" class="btn btn-sm text-dark p-0"><i
+                                        class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="div-categories">
+            <div class="container-fluid pt-5">
+                <div class="text-center mb-4">
+                    <h2 class="section-title px-5"><span class="px-2 text-white">Categories</span></h2>
+                </div>
+                <div class="row px-xl-5 pb-3">
+                    <div class="col-lg-4 col-md-6 pb-1">
+                        <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
+                            <p class="text-right">15 Products</p>
+                            <a href="item_detail.html" class="cat-img position-relative overflow-hidden mb-3">
+                                <img class="img-fluid" src="./images/pg-ionantha-huamelula-maxima-air-plants-800x800.jpg" alt="">
+                            </a>
+                            <h5 class="font-weight-semi-bold m-0">Aire Plants</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 pb-1">
+                        <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
+                            <p class="text-right">15 Products</p>
+                            <a href="item_detail.html" class="cat-img position-relative overflow-hidden mb-3">
+                                <img class="img-fluid" src="./images/anthurium-andreanum-black-800x800.jpg" alt="">
+                            </a>
+                            <h5 class="font-weight-semi-bold m-0">Flamingo Flowers</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 pb-1">
+                        <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
+                            <p class="text-right">15 Products</p>
+                            <a href="item_detail.html" class="cat-img position-relative overflow-hidden mb-3">
+                                <img class="img-fluid" src="./images/pg-adenium-lemon-ice-800x800.jpg" alt="">
+                            </a>
+                            <h5 class="font-weight-semi-bold m-0">Canna Plant</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 pb-1">
+                        <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
+                            <p class="text-right">15 Products</p>
+                            <a href="item_detail.html" class="cat-img position-relative overflow-hidden mb-3">
+                                <img class="img-fluid" src="./images/pg-ionantha-huamelula-maxima-air-plants-800x800.jpg" alt="">
+                            </a>
+                            <h5 class="font-weight-semi-bold m-0">Dahlia Plant</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 pb-1">
+                        <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
+                            <p class="text-right">15 Products</p>
+                            <a href="item_detail.html" class="cat-img position-relative overflow-hidden mb-3">
+                                <img class="img-fluid" src="./images/tillandsia-funckiana-air-plant-800x800.jpg" alt="">
+                            </a>
+                            <h5 class="font-weight-semi-bold m-0">Bonsai Plants</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 pb-1">
+                        <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
+                            <p class="text-right">15 Products</p>
+                            <a href="item_detail.html" class="cat-img position-relative overflow-hidden mb-3">
+                                <img class="img-fluid" src="./images/pg-streptophylla-hybrid-800x800.jpg" alt="">
+                            </a>
+                            <h5 class="font-weight-semi-bold m-0">Fern Plant</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
         <!-- place footer here -->
@@ -82,7 +385,7 @@
                     <div class="row">
                         <!--Grid column-->
                         <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                            <h5 class="text-uppercase mb-4 text-light" >Site Map</h5>
+                            <h5 class="text-uppercase mb-4 text-light">Site Map</h5>
 
                             <ul class="list-unstyled mb-4">
                                 <li>
