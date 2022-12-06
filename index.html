@@ -29,12 +29,49 @@
                 background-color: #859088;
                 margin: 100px;
             }
+
             #div-categories {
                 background-color: #859088;
                 margin: 100px;
             }
-            p,h5{
+
+            p,
+            h5 {
                 color: white;
+            }
+
+            /* The dots/bullets/indicators */
+            .doted {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+
+            .active,
+            .doted:hover {
+                background-color: #717171;
+            }
+
+
+            /* Fading animation */
+            .fade {
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+
+            @keyframes fade {
+                from {
+                    opacity: .4
+                }
+
+                to {
+                    opacity: 1
+                }
             }
         </style>
     </head>
@@ -42,6 +79,7 @@
 <body>
 
     <header>
+
         <!-- place navbar here -->
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <div class="container-fluid">
@@ -80,13 +118,14 @@
             </div>
         </nav>
     </header>
+
+
+
     <main>
-
-
 
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active" style="height: 410px;">
+                <div class="carousel-item active fade" style="height: 410px;">
                     <img class="img-fluid" src="./images/pots-gdc1827781_192011.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 700px;">
@@ -98,7 +137,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item" style="height: 410px;">
+                <div class="carousel-item fade" style="height: 410px;">
                     <img class="img-fluid" src="./images/nature-g1a33d2449_1920.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 700px;">
@@ -112,15 +151,20 @@
                 </div>
             </div>
             <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
-                <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                <div class="btn btn-dark" style="width: 45px; height: 45px;" onclick="plusSlides(-1)">
                     <span class="carousel-control-prev-icon mb-n2"></span>
                 </div>
             </a>
             <a class="carousel-control-next" href="#header-carousel" data-slide="next">
-                <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                <div class="btn btn-dark" style="width: 45px; height: 45px;" onclick="plusSlides(1)">
                     <span class="carousel-control-next-icon mb-n2"></span>
                 </div>
             </a>
+            <div style="text-align:center">
+                <span class="doted" onclick="currentSlide(1)"></span>
+                <span class="doted" onclick="currentSlide(2)"></span>
+                <span class="doted" onclick="currentSlide(3)"></span>
+            </div>
         </div>
 
         <div id="div-products">
@@ -199,7 +243,8 @@
                         <div class="card product-item border-0 mb-4">
                             <div
                                 class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                <img class="img-fluid w-100" src="./images/tillandsia-funckiana-air-plant-800x800.jpg" alt="">
+                                <img class="img-fluid w-100" src="./images/tillandsia-funckiana-air-plant-800x800.jpg"
+                                    alt="">
                             </div>
                             <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                                 <h6 class="text-truncate mb-3">Tillandsia Funckiana</h6>
@@ -221,7 +266,8 @@
                         <div class="card product-item border-0 mb-4">
                             <div
                                 class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                <img class="img-fluid w-100" src="./images/pg-ionantha-huamelula-maxima-air-plants-800x800.jpg" alt="">
+                                <img class="img-fluid w-100"
+                                    src="./images/pg-ionantha-huamelula-maxima-air-plants-800x800.jpg" alt="">
                             </div>
                             <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                                 <h6 class="text-truncate mb-3">Ionantha Huamelula Maxima</h6>
@@ -287,7 +333,8 @@
                         <div class="card product-item border-0 mb-4">
                             <div
                                 class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                <img class="img-fluid w-100" src="./images/anthurium-andreanum-black-800x800.jpg" alt="">
+                                <img class="img-fluid w-100" src="./images/anthurium-andreanum-black-800x800.jpg"
+                                    alt="">
                             </div>
                             <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                                 <h6 class="text-truncate mb-3">Anthurium Black</h6>
@@ -319,7 +366,8 @@
                         <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                             <p class="text-right">15 Products</p>
                             <a href="item_detail.html" class="cat-img position-relative overflow-hidden mb-3">
-                                <img class="img-fluid" src="./images/pg-ionantha-huamelula-maxima-air-plants-800x800.jpg" alt="">
+                                <img class="img-fluid"
+                                    src="./images/pg-ionantha-huamelula-maxima-air-plants-800x800.jpg" alt="">
                             </a>
                             <h5 class="font-weight-semi-bold m-0">Aire Plants</h5>
                         </div>
@@ -346,7 +394,8 @@
                         <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                             <p class="text-right">15 Products</p>
                             <a href="item_detail.html" class="cat-img position-relative overflow-hidden mb-3">
-                                <img class="img-fluid" src="./images/pg-ionantha-huamelula-maxima-air-plants-800x800.jpg" alt="">
+                                <img class="img-fluid"
+                                    src="./images/pg-ionantha-huamelula-maxima-air-plants-800x800.jpg" alt="">
                             </a>
                             <h5 class="font-weight-semi-bold m-0">Dahlia Plant</h5>
                         </div>
@@ -397,6 +446,9 @@
                                 <li>
                                     <a href="cart.html" class="text-white">Shopping Cart</a>
                                 </li>
+                                <li>
+                                    <a href="Questionnaire.html" class="text-white">Questionnaire Page</a>
+                                </li>
                             </ul>
                         </div>
                         <!--Grid column-->
@@ -437,6 +489,41 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
       </script> -->
+
+
+    <script>
+        let indexSlide = 1;
+
+        showSlide(indexSlide);
+
+        function plusSlides(n) {
+            showSlide(indexSlide += n);
+        }
+
+        function currentSlide(n) {
+            showSlide(indexSlide = n);
+        }
+
+        function showSlide(n) {
+            let i;
+            let slides = document.getElementsByClassName("carousel-item");
+            let dots = document.getElementsByClassName("doted");
+            if (n > slides.length) {
+                indexSlide = 1;
+            }
+            if (n < 1) {
+                indexSlide = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[indexSlide - 1].style.display = "block";
+            dots[indexSlide - 1].className += " active";
+        }
+    </script>
 </body>
 
 </html>
