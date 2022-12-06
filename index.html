@@ -64,6 +64,29 @@
                 animation-duration: 1.5s;
             }
 
+            /* Next & previous buttons */
+            .previousSlide,
+            .nextSlide {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -22px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+
+            /* Position the "next button" to the right */
+            .nextSlide {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
             @keyframes fade {
                 from {
                     opacity: .4
@@ -449,6 +472,9 @@
                                 <li>
                                     <a href="Questionnaire.html" class="text-white">Questionnaire Page</a>
                                 </li>
+                                <li>
+                                    <a href="funpage.html" class="text-white">Fun Page</a>
+                                </li>
                             </ul>
                         </div>
                         <!--Grid column-->
@@ -518,10 +544,10 @@
                 slides[i].style.display = "none";
             }
             for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
+                dots[i].className = dots[i].className.replace("active", "");
             }
             slides[indexSlide - 1].style.display = "block";
-            dots[indexSlide - 1].className += " active";
+            dots[indexSlide - 1].className += "active";
         }
     </script>
 </body>

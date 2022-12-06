@@ -96,44 +96,50 @@
 
 <body>
 
- <!-- place navbar here -->
- <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <div class="container-fluid">
-        <img src="images/logo.png" alt="logo" width="100px" height="60px">
-        <!-- <a class="navbar-brand" href="javascript:void(0)">Logo</a> -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mynavbar">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About Us</a>
-                </li>
-            </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="text" placeholder="Search">
-                <button class="btn btn-primary" type="button">Search</button>
-            </form>
-            <div class="col-lg-3 col-6 text-right" style="padding: 10px;">
+    <!-- place navbar here -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <img src="images/logo.png" alt="logo" width="100px" height="60px">
+            <!-- <a class="navbar-brand" href="javascript:void(0)">Logo</a> -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Questionnaire.html">Questionnaire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="funpage.html">Fun Page</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="text" placeholder="Search">
+                    <button class="btn btn-primary" type="button">Search</button>
+                </form>
+                <div class="col-lg-3 col-6 text-right" style="padding: 10px;">
 
-                <a href="cart.html" class="btn border" style="background-color: white;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-cart" viewBox="0 0 16 16">
-                        <path
-                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                    </svg>
-                </a>
+                    <a href="cart.html" class="btn border" style="background-color: white;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-cart" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
-</header>
+    </nav>
+    </header>
 
 
     <main>
@@ -181,9 +187,9 @@
                 <!-- Dropdown options -->
                 <select name="role" id="role">
                     <option value="student">Student</option>
-                    <option value="intern">Intern</option>
+                    <option value="intern">Jobseeker</option>
                     <option value="professional">
-                        Professional
+                        Retauerd
                     </option>
                     <option value="other">Other</option>
                 </select>
@@ -191,7 +197,7 @@
 
             <div class="form-control0">
                 <label>
-                    Would you recommend GeeksforGeeks
+                    Would you recommend This Website
                     to a friend?
                 </label>
 
@@ -208,30 +214,26 @@
             </div>
 
             <div class="form-control0">
-                <label>Languages and Frameworks known
+                <label>Types of Plants You Like
                     <small>(Check all that apply)</small>
                 </label>
                 <!-- Input Type Checkbox -->
                 <label for="inp-1">
-                    <input type="checkbox" name="inp">C</input></label>
+                    <input type="checkbox" name="inp">Bananas </input></label>
                 <label for="inp-2">
-                    <input type="checkbox" name="inp">C++</input></label>
+                    <input type="checkbox" name="inp">Bamboo </input></label>
                 <label for="inp-3">
-                    <input type="checkbox" name="inp">C#</input></label>
+                    <input type="checkbox" name="inp">Cacao</input></label>
                 <label for="inp-4">
-                    <input type="checkbox" name="inp">Java</input></label>
+                    <input type="checkbox" name="inp">Cotton </input></label>
                 <label for="inp-5">
-                    <input type="checkbox" name="inp">Python</input></label>
+                    <input type="checkbox" name="inp">Oil palm</input></label>
                 <label for="inp-6">
-                    <input type="checkbox" name="inp">JavaScript</input></label>
+                    <input type="checkbox" name="inp">Olive</input></label>
                 <label for="inp-7">
-                    <input type="checkbox" name="inp">React</input></label>
+                    <input type="checkbox" name="inp">Sugar</input></label>
                 <label for="inp-7">
-                    <input type="checkbox" name="inp">Angular</input></label>
-                <label for="inp-7">
-                    <input type="checkbox" name="inp">Django</input></label>
-                <label for="inp-7">
-                    <input type="checkbox" name="inp">Spring</input></label>
+                    <input type="checkbox" name="inp">Tea</input></label>
             </div>
 
             <div class="form-control0">
@@ -274,6 +276,12 @@
                                 </li>
                                 <li>
                                     <a href="cart.html" class="text-white">Shopping Cart</a>
+                                </li>
+                                <li>
+                                    <a href="Questionnaire.html" class="text-white">Questionnaire Page</a>
+                                </li>
+                                <li>
+                                    <a href="funpage.html" class="text-white">Fun Gane Page</a>
                                 </li>
                             </ul>
                         </div>
