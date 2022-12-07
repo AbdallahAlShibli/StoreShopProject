@@ -1,9 +1,8 @@
 .containerc {
-    width: 350px;
-    height: 500px;
-    margin: 50px;
+    width: 300px;
+    height: 420px;
     padding: 20px;
-    background-color: #fff;
+    background-color: rgb(126, 126, 126);
     position: absolute;
     left: 50%;
     top: 50%;
@@ -11,46 +10,48 @@
     border-radius: 20px;
 }
 
-h1 {
+#he1 {
     position: absolute;
     left: 50%;
     top: -60px;
     width: 300px;
+    height: 80px;
     transform: translateX(-50%);
     background-color: #779e68;
     color: #fff;
-    font-weight: 100;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     font-size: 18px;
+    padding-top: 30px;
     text-align: center;
-    padding: 10px;
 }
 
 .wrapperc {
     padding: 20px;
 }
 
-input,
-select {
+#amount,
+#discount {
     width: 80%;
     border: none;
     border-bottom: 1px solid #0074D9;
     padding: 10px;
 }
 
-input:focus,
-select:focus {
+#amount:focus,
+#discount:focus {
     border: 1px solid #0074D9;
     outline: none;
 }
 
-select {
+#discount {
     width: 88% !important;
 }
 
-button {
-    margin: 20px auto;
+#calculate {
+    margin: 30px auto;
+    padding-top: 20px;
+    padding: 10px;
     width: 150px;
     height: 50px;
     background-color: #779e68;

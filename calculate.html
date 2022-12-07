@@ -65,9 +65,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="funpage.html">Fun Page</a>
                         </li>
-                        <li>
-                            <a href="calculate.html" class="text-white">Calculate Page</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calculate.html" class="text-white">Calculate Page</a>
                         </li>
+
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="text" placeholder="Search">
@@ -89,43 +90,41 @@
     </header>
 
     <main>
-        <!-- <dif class="containerc">
-            <img class="image" src="./images/photo.png" alt="photo">
-            <h1>Play A Funy Snak Game With Us</h1>
-        </dif> -->
-        <div class="containerc">
-            <h1>Discount Calculator</h1>
-            <div class="wrapperc">
-                <p>Bill Amount</p>
-                <input type="text" id="amount" placeholder="Amount to be paid"> OR
-                <p>First time using the Website ?</p>
-                <select id="discount">
-                    <option selected disabled hidden>Select</option>
-                    <option value="0.20">Yes</option>
-                    <option value="1">No</option>
-                </select>
 
-                <button id="calculate">Calculate</button>
-            </div>
+        <div style="width: 200px; height: 580px;">
+            <div class="containerc">
+                <h1 id="he1">Discount Calculator</h1>
+                <div class="wrapperc">
+                    <p class="text-white">Bill Amount</p>
+                    <input type="text" id="amount" placeholder="Amount to be paid"> OR
+                    <p class="text-white">First time using the Website ?</p>
+                    <select id="discount">
+                        <option selected disabled hidden>Select</option>
+                        <option value="0.20">Yes</option>
+                        <option value="1">No</option>
+                    </select>
 
-            <div class="amount">
+                    <button id="calculate">Calculate</button>
+                </div>
+
+                <div class="amount">
 
 
 
-                <p class="amountDis"></p>
+                    <p class="amountDis"></p>
 
 
 
-                <span id="total">0</span> OR
+                    <span class="text-white" id="total">0</span> OR
+                </div>
             </div>
         </div>
-        <script src="./javaScript/script.js">
-        </script>
+
     </main>
     <footer>
         <!-- place footer here -->
         <!-- Remove the container if you want to extend the Footer to full width. -->
-        <div class="container my- bg-dark " style="margin:50px">
+        <div class="container my- bg-dark ">
 
             <footer class="text-center text-lg-start border border-white mt-xl-5 pt-4">
                 <!-- Grid container -->
@@ -184,7 +183,51 @@
         </div>
         <!-- End of .container -->
     </footer>
+    <script>
+        //calculate discount
 
+
+        //the function called when Calculate button is clicked.
+        window.onload = () => {
+            /*calling a function calculateDiscount which
+            will calculate the amount for the bill.*/
+            document.querySelector('#calculate').onclick =
+                calculateDiscount;
+        }
+
+        function calculateDiscount() {
+            /*assign values of ID : amount and
+            discount to variables for further calculations.*/
+            let amount = document.querySelector('#amount').value;
+            let discount = document.querySelector('#discount').value;
+
+            console.log(discount);
+            /*if statement will work when user
+            presses calculate without entering values. */
+            //so will display an alert box and return.
+            if (amount === '' && discount === 'Select') {
+                alert("Please enter valid values");
+                return;
+            }
+
+
+            /*calculating the amount by multiplying total-bill and type of discount;
+        */
+            //fixing the total amount upto 2 digits of decimal
+            let total = (amount * discount);
+            total = total.toFixed(2);
+            amount = amount - total;
+
+            if (discount == 0.20) {
+                document.querySelector('.amountDis').innerHTML = "Th Amount After Discount of 20%";
+            } else {
+                document.querySelector('.amountDis').innerHTML = "Th Amount Without Discount";
+            }
+            //finally displaying the amount value
+            document.querySelector('.amount').style.display = 'block';
+            document.querySelector('#total').innerHTML = amount;
+        }
+    </script>
 </body>
 
 </html>
