@@ -185,7 +185,8 @@
         <div class="col-lg-7 mb-5">
             <div class="contact-form">
                 <div id="success"></div>
-                <form name="sentMessage" id="contactForm" novalidate="novalidate" action="mailto:FFPF@info.com" method="post" enctype="text/plain">
+                <form name="sentMessage" id="contactForm" novalidate="novalidate" action="mailto:FFPF@info.com"
+                    method="post" enctype="text/plain">
                     <div class="control-group">
                         <input type="text" class="form-control" id="name" placeholder="Your Name" required="required"
                             data-validation-required-message="Please enter your name" aria-invalid="false">
@@ -299,6 +300,175 @@
     </div>
     <!-- End of .container -->
 </footer>
+<script>
+    // Get the email input element
+    const emailInput = document.getElementById('form5Example2');
+
+    // Get the submit button element
+    const submitButton = document.querySelector('button[type="submit"]');
+
+    // Add a click event listener to the submit button
+    submitButton.addEventListener('click', function (event) {
+        // Prevent the default action of the button (submitting the form)
+        event.preventDefault();
+
+        // Get the value of the email input
+        const email = emailInput.value;
+
+        // Validate the email
+        if (!isValidEmail(email)) {
+            // If the email is invalid, show an error message
+            alert('Please enter a valid email address');
+            return;
+        }
+
+        // If the email is valid, send the newsletter signup request
+        sendNewsletterSignupRequest(email);
+    });
+
+    function isValidEmail(email) {
+        // Use a regular expression to check if the email is in the correct format
+        const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+        return emailRegex.test(email);
+    }
+
+    function sendNewsletterSignupRequest(email) {
+        // Use an HTTP request to send the newsletter signup request to the server
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', '/newsletter-signup');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send(`email=${encodeURIComponent(email)}`);
+    }
+
+
+
+    // Get the form elements
+    const form = document.querySelector('form');
+    const nameInput = document.querySelector('#name');
+    const emailInput = document.querySelector('#email');
+    const subjectInput = document.querySelector('#subject');
+    const messageInput = document.querySelector('#message');
+    const sendMessageButton = document.querySelector('#sendMessageButton');
+    const successDiv = document.querySelector('#success');
+    const errorDiv = document.querySelector('#error');
+
+    // Add a submit event listener to the form
+    form.addEventListener('submit', function (event) {
+        // Prevent the default action of the form (submitting via email)
+        event.preventDefault();
+
+        // Get the form data
+        const name = nameInput.value;
+        const email = emailInput.value;
+        const subject = subjectInput.value;
+        const message = messageInput.value;
+
+        // Validate the form data
+        const errors = [];
+        if (!name) {
+            errors.push('Name is required');
+        }
+        if (!email) {
+            errors.push('Email is required');
+        }
+        if (!subject) {
+            errors.push('Subject is required');
+        }
+        if (!message) {
+            errors.push('Message is required');
+        }
+
+        // If there are no errors, send the form data to the server
+        if (errors.length === 0) {
+            sendMessageButton.innerHTML = 'Sending...';
+            sendMessageButton.disabled = true;
+            successDiv.innerHTML = '';
+            errorDiv.innerHTML = '';
+
+            // Send the form data to the server using an HTTP request
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/send-message');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    // If the request is successful, display a success message
+                    successDiv.innerHTML = 'Your message was sent successfully';
+                    sendMessageButton.innerHTML = 'Send Message';
+                    sendMessageButton.disabled = false;
+                    nameInput.value = '';
+                    emailInput.value = '';
+                    subjectInput.value = '';
+                    messageInput.value = '';
+                } else {
+                    // If the request is not successful, display an error message
+                    errorDiv.innerHTML = 'There was an error sending your message';
+                    sendMessageButton.innerHTML = 'Send Message';
+                    sendMessageButton.disabled = false;
+                }
+            };
+            xhr.send(`name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&subject=${encodeURIComponent(subject)}&message=${encodeURIComponent(message)}`);
+        } else {
+            // If there are errors, display them
+            errorDiv.innerHTML = errors.join('<br>');
+        }
+    });
+</script>
+
+<?php
+$hostname = 'localhost';
+$username = 'admin';
+$password = 'admin';
+$database = 'my_shope';
+
+// Connect to the database
+$conn = mysqli_connect($hostname, $username, $password, $database);
+
+// Check the connection
+if (!$conn) {
+    die('Connection failed: ' . mysqli_connect_error());
+}
+echo 'Connected successfully';
+
+  // Check if the form has been submitted
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Get the form data
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+    // Validate the form data
+    $errors = [];
+    if (empty($name)) {
+      $errors[] = 'Name is required';
+    }
+    if (empty($email)) {
+      $errors[] = 'Email is required';
+    } else {
+      // Validate the email format
+      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = 'Invalid email format';
+      }
+    }
+    if (empty($subject)) {
+      $errors[] = 'Subject is required';
+    }
+    if (empty($message)) {
+      $errors[] = 'Message is required';
+    }
+
+    // If there are no errors, send the email
+    if (empty($errors)) {
+      $to = 'FFPF@info.com';
+      $headers = "From: $email\r\n";
+      if (mail($to, $subject, $message, $headers)) {
+        $success = 'Your message was sent successfully';
+      } else {
+        $errors[] = 'There was an error sending your message';
+      }
+    }
+  }
+?>
 </body>
 
 </html>
