@@ -181,13 +181,18 @@
         }
     </style>
 </head>
-        </div>
+<body>
+<div>
+<h1>Question 3d: update a plant</h1>    
 
-     <table id="myTable" border="2"></table>
-     
-
-     <div>Plant
- <form name="f1" method="GET" action="insertt.php">
+ <form name="f2" method="GET" action="updt.php">
+       
+   
+      
+ Type the name of the plant you want update :<input type="text" name="field">   <input type="submit" value="Update" name="btn">
+    
+    <div>Plant
+ 
     <table>
   <tr> <td> Name : </td><td><input type="text" name="nnn"></td>  </tr>
   <tr> <td> Color : </td><td><input type="text" name="ccc"></td>  </tr>
@@ -196,18 +201,97 @@
        
     </table>
       
-    <input type="submit" value="Add new Plant">
+    
      </form>
 </div>
-     <table id="myTable" border="2"></table>
-     </div>
-                  
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
-<!-- Cart End -->
-</body>
+<?php
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$dbname = "vegetable";
 
+$conn = mysqli_connect($hostname, $username, $password, $dbname);
+$req="";
+if (isset($_GET['btn'])) {
+    if(isset($_GET['field']))
+    {$n=$_GET["field"];
+        
+if(!$conn) {
+die("Unable to connect");
+}
+
+$req="select * from plants where nam='$n'" ;
+
+
+
+$result = mysqli_query($conn,$req);
+echo"Old Data ";
+echo "<table border='1'>
+<tr>
+<th>Name </th>
+<th>Color</th>
+<th>Age</th>
+<th>Price</th>
+
+</tr>";
+
+while($row = mysqli_fetch_array($result))
+{
+echo "<tr>";
+echo "<td>" . $row['nam'] . "</td>";
+echo "<td>" . $row['color'] . "</td>";
+echo "<td>" . $row['age'] . "</td>";
+echo "<td>" . $row['price'] . "</td>";
+echo "</tr>";
+}
+echo "</table>";
+$nnnn=$_GET["nnn"];
+$cccc=$_GET["ccc"];
+$aaaa=$_GET["aaa"];
+$pppp=$_GET["ppp"];
+//$sql = "UPDATE plants SET nam='..',color='.$_GET["ccc"].',age='.$_GET["aaa"].',price='.$_GET["ppp"].'WHERE nam=$n";
+
+
+$sql = "UPDATE plants SET nam='".$nnnn."', color='".$cccc."', price='".$pppp."'  WHERE nam='".$n."' ";
+if(mysqli_query($conn, $sql))
+{
+
+    $req1="select * from plants" ;
+
+
+
+    $result1 = mysqli_query($conn,$req1);
+    echo"New Data ";
+    echo "<table border='1'>
+    <tr>
+    <th>Name </th>
+    <th>Color</th>
+    <th>Age</th>
+    <th>Price</th>
+    
+    </tr>";
+    
+    while($row = mysqli_fetch_array($result1))
+    {
+    echo "<tr>";
+    echo "<td>" . $row['nam'] . "</td>";
+    echo "<td>" . $row['color'] . "</td>";
+    echo "<td>" . $row['age'] . "</td>";
+    echo "<td>" . $row['price'] . "</td>";
+    echo "</tr>";
+    }
+    echo "</table>";
+    
+    
+
+
+}
+
+mysqli_close($conn);
+}}
+
+?>
+
+</body>
 </html>

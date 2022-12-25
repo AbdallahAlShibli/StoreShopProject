@@ -181,33 +181,85 @@
         }
     </style>
 </head>
-        </div>
-
-     <table id="myTable" border="2"></table>
-     
-
-     <div>Plant
- <form name="f1" method="GET" action="insertt.php">
-    <table>
-  <tr> <td> Name : </td><td><input type="text" name="nnn"></td>  </tr>
-  <tr> <td> Color : </td><td><input type="text" name="ccc"></td>  </tr>
-  <tr> <td> Age :   </td><td><input type="text" name="aaa"></td>  </tr>
-  <tr> <td> Price : </td><td><input type="text" name="ppp"></td>  </tr> 
+<body>
+<div>
+<h1>Question 3: Search a plant</h1>    
+Search by (criteria):
+ <form name="f2" method="GET" action="find.php">
+   
+   Name <input type="radio" name="dd" value="nm">
+ Color <input type="radio" name="dd" value="cl">
+   Age    <input type="radio" name="dd" value="ag">
+ Price  <input type="radio" name="dd" value="pr">
        
     </table>
       
-    <input type="submit" value="Add new Plant">
+ <input type="text" name="field">   <input type="submit" value="Display results" name="btn">
      </form>
 </div>
-     <table id="myTable" border="2"></table>
-     </div>
-                  
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Cart End -->
-</body>
+<?php
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$dbname = "vegetable";
 
+$conn = mysqli_connect($hostname, $username, $password, $dbname);
+$req="";
+if (isset($_GET['btn'])) {
+    if(isset($_GET['field']))
+    {$d=$_GET["dd"];
+        $n=$_GET["field"];
+if(!$conn) {
+die("Unable to connect");
+}
+if($d=="nm")
+{
+$req="select * from plants where nam='$n'" ;
+}
+if($d=="cl")
+{
+$req="select * from plants where color='$n'" ;
+}
+if($d=="ag")
+{
+$req="select * from plants where age='$n'" ;
+}
+if($d=="pr")
+{
+$req="select * from plants where price='$n'" ;
+}
+
+if (mysqli_query($conn, $req)) {
+    echo"plant inserted succefully";
+} else {
+    echo "Erreur : " . $req . "<br>" . mysqli_error($conn);
+}
+
+$result = mysqli_query($conn,$req);
+
+echo "<table border='1'>
+<tr>
+<th>Name </th>
+<th>Color</th>
+<th>Age</th>
+<th>Price</th>
+
+</tr>";
+
+while($row = mysqli_fetch_array($result))
+{
+echo "<tr>";
+echo "<td>" . $row['nam'] . "</td>";
+echo "<td>" . $row['color'] . "</td>";
+echo "<td>" . $row['age'] . "</td>";
+echo "<td>" . $row['price'] . "</td>";
+echo "</tr>";
+}
+echo "</table>";
+
+mysqli_close($conn);
+}}
+?>
+
+</body>
 </html>

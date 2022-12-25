@@ -29,12 +29,81 @@
                 background-color: #859088;
                 margin: 100px;
             }
+
             #div-categories {
                 background-color: #859088;
                 margin: 100px;
             }
-            p,h5{
+
+            p,
+            h5 {
                 color: white;
+            }
+
+            /* The dots/bullets/indicators */
+            .doted {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+
+            .active,
+            .doted:hover {
+                background-color: #717171;
+            }
+
+
+            /* Fading animation */
+            .fade {
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+
+            /* Slideshow container */
+            .slideShow-container {
+                max-width: 1000px;
+                position: relative;
+                margin: auto;
+            }
+
+
+            @keyframes fade {
+                from {
+                    opacity: .4
+                }
+
+                to {
+                    opacity: 1
+                }
+            }
+
+
+
+
+            div.gallery {
+                margin: 5px;
+                border: 1px solid #ccc;
+                float: left;
+                width: 180px;
+            }
+
+            div.gallery:hover {
+                border: 1px solid #777;
+            }
+
+            div.gallery img {
+                width: 100%;
+                height: auto;
+            }
+
+            div.desc {
+                padding: 15px;
+                text-align: center;
             }
         </style>
     </head>
@@ -42,6 +111,7 @@
 <body>
 
     <header>
+
         <!-- place navbar here -->
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <div class="container-fluid">
@@ -53,13 +123,22 @@
                 <div class="collapse navbar-collapse" id="mynavbar">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#HOME">Home</a>
+                            <a class="nav-link" href="crtt.php">Add plant</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact Us</a>
+                            <a class="nav-link" href="find.php">Find plant</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">About Us</a>
+                            <a class="nav-link" href="updt.php">Update plant</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Questionnaire.html">Questionnaire</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="funpage.html">Fun Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calculate.html" class="text-white">Calculate Page</a>
                         </li>
                     </ul>
                     <form class="d-flex">
@@ -80,17 +159,18 @@
             </div>
         </nav>
     </header>
+
+
+
     <main>
-
-
 
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active" style="height: 410px;">
+                <div class="carousel-item active fade" style="height: 410px;">
                     <img class="img-fluid" src="./images/pots-gdc1827781_192011.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 700px;">
-                            <h4 class="text-light text-uppercase text-color-green font-weight-medium mb-3">10% Off
+                            <h4 class="text-light text-uppercase text-color-green font-weight-medium mb-3">20% Off
                                 Your
                                 First Order</h4>
                             <h3 class="display-4 text-white font-weight-semi-bold mb-4">High-Quality Plants</h3>
@@ -98,11 +178,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item" style="height: 410px;">
+                <div class="carousel-item fade" style="height: 410px;">
                     <img class="img-fluid" src="./images/nature-g1a33d2449_1920.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 700px;">
-                            <h4 class="text-light text-uppercase text-white font-weight-medium mb-3">10% Off Your
+                            <h4 class="text-light text-uppercase text-white font-weight-medium mb-3">20% Off Your
+                                First
+                                Order</h4>
+                            <h3 class="display-4 text-white font-weight-semi-bold mb-4">High-Quality Plants</h3>
+                            <a href="#section2" class="btn btn-light py-2 px-3">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item fade" style="height: 410px;">
+                    <img class="img-fluid" src="./images/investment-gfbc76e64e_1920.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 700px;">
+                            <h4 class="text-light text-uppercase text-white font-weight-medium mb-3">20% Off Your
                                 First
                                 Order</h4>
                             <h3 class="display-4 text-white font-weight-semi-bold mb-4">High-Quality Plants</h3>
@@ -112,15 +205,20 @@
                 </div>
             </div>
             <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
-                <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                <div class="btn btn-dark" style="width: 45px; height: 45px;" onclick="plusSlides(-1)">
                     <span class="carousel-control-prev-icon mb-n2"></span>
                 </div>
             </a>
             <a class="carousel-control-next" href="#header-carousel" data-slide="next">
-                <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                <div class="btn btn-dark" style="width: 45px; height: 45px;" onclick="plusSlides(1)">
                     <span class="carousel-control-next-icon mb-n2"></span>
                 </div>
             </a>
+            <div style="text-align:center">
+                <span class="doted" onclick="currentSlide(1)"></span>
+                <span class="doted" onclick="currentSlide(2)"></span>
+                <span class="doted" onclick="currentSlide(3)"></span>
+            </div>
         </div>
 
         <div id="div-products">
@@ -199,7 +297,8 @@
                         <div class="card product-item border-0 mb-4">
                             <div
                                 class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                <img class="img-fluid w-100" src="./images/tillandsia-funckiana-air-plant-800x800.jpg" alt="">
+                                <img class="img-fluid w-100" src="./images/tillandsia-funckiana-air-plant-800x800.jpg"
+                                    alt="">
                             </div>
                             <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                                 <h6 class="text-truncate mb-3">Tillandsia Funckiana</h6>
@@ -221,7 +320,8 @@
                         <div class="card product-item border-0 mb-4">
                             <div
                                 class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                <img class="img-fluid w-100" src="./images/pg-ionantha-huamelula-maxima-air-plants-800x800.jpg" alt="">
+                                <img class="img-fluid w-100"
+                                    src="./images/pg-ionantha-huamelula-maxima-air-plants-800x800.jpg" alt="">
                             </div>
                             <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                                 <h6 class="text-truncate mb-3">Ionantha Huamelula Maxima</h6>
@@ -287,7 +387,8 @@
                         <div class="card product-item border-0 mb-4">
                             <div
                                 class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                <img class="img-fluid w-100" src="./images/anthurium-andreanum-black-800x800.jpg" alt="">
+                                <img class="img-fluid w-100" src="./images/anthurium-andreanum-black-800x800.jpg"
+                                    alt="">
                             </div>
                             <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                                 <h6 class="text-truncate mb-3">Anthurium Black</h6>
@@ -319,7 +420,8 @@
                         <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                             <p class="text-right">15 Products</p>
                             <a href="item_detail.html" class="cat-img position-relative overflow-hidden mb-3">
-                                <img class="img-fluid" src="./images/pg-ionantha-huamelula-maxima-air-plants-800x800.jpg" alt="">
+                                <img class="img-fluid"
+                                    src="./images/pg-ionantha-huamelula-maxima-air-plants-800x800.jpg" alt="">
                             </a>
                             <h5 class="font-weight-semi-bold m-0">Aire Plants</h5>
                         </div>
@@ -346,7 +448,8 @@
                         <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                             <p class="text-right">15 Products</p>
                             <a href="item_detail.html" class="cat-img position-relative overflow-hidden mb-3">
-                                <img class="img-fluid" src="./images/pg-ionantha-huamelula-maxima-air-plants-800x800.jpg" alt="">
+                                <img class="img-fluid"
+                                    src="./images/pg-ionantha-huamelula-maxima-air-plants-800x800.jpg" alt="">
                             </a>
                             <h5 class="font-weight-semi-bold m-0">Dahlia Plant</h5>
                         </div>
@@ -369,9 +472,61 @@
                             <h5 class="font-weight-semi-bold m-0">Fern Plant</h5>
                         </div>
                     </div>
+                    <div class="text-center mb-4">
+                        <h2 class="section-title px-5"><span class="px-2 text-white">Gallery</span></h2>
+                    </div>
+                    <br>
+                    <div style="align-items: center;">
+                        <div class="gallery">
+                            <a target="_blank" href="./images/anthurium-red-winner-800x800.jpg">
+                                <img src="./images/anthurium-red-winner-800x800.jpg" alt="Cinque Terre" width="600"
+                                    height="400">
+                            </a>
+                            <div class="desc text-white">Red Winner</div>
+                        </div>
+
+                        <div class="gallery">
+                            <a target="_blank" href="./images/pg-adenium-lemon-ice-800x800.jpg">
+                                <img src="./images/pg-adenium-lemon-ice-800x800.jpg" alt="Forest" width="600"
+                                    height="400">
+                            </a>
+                            <div class="desc text-white">Aire Plants</div>
+                        </div>
+
+                        <div class="gallery">
+                            <a target="_blank" href="./images/pg-ionantha-huamelula-maxima-air-plants-800x800.jpg">
+                                <img src="./images/pg-ionantha-huamelula-maxima-air-plants-800x800.jpg"
+                                    alt="Northern Lights" width="600" height="400">
+                            </a>
+                            <div class="desc text-white">Dahlia Plant</div>
+                        </div>
+
+                        <div class="gallery">
+                            <a target="_blank" href="./images/anthurium-andreanum-black-800x800.jpg">
+                                <img src="./images/anthurium-andreanum-black-800x800.jpg" alt="Mountains" width="600"
+                                    height="400">
+                            </a>
+                            <div class="desc text-white">Flamingo Flowers</div>
+                        </div>
+                        <div class="gallery">
+                            <a target="_blank" href="./images/tillandsia-funckiana-air-plant-800x800.jpg">
+                                <img src="./images/tillandsia-funckiana-air-plant-800x800.jpg" alt="Mountains"
+                                    width="600" height="400">
+                            </a>
+                            <div class="desc text-white">Bonsai Plants</div>
+                        </div>
+
+                    </div>
+                    </br>
                 </div>
+
             </div>
+
         </div>
+
+
+
+
     </main>
     <footer>
         <!-- place footer here -->
@@ -397,6 +552,15 @@
                                 <li>
                                     <a href="cart.html" class="text-white">Shopping Cart</a>
                                 </li>
+                                <li>
+                                    <a href="Questionnaire.html" class="text-white">Questionnaire Page</a>
+                                </li>
+                                <li>
+                                    <a href="funpage.html" class="text-white">Fun Page</a>
+                                </li>
+                                <li>
+                                    <a href="calculate.html" class="text-white">Calculate Page</a>
+                                </li>
                             </ul>
                         </div>
                         <!--Grid column-->
@@ -405,7 +569,7 @@
                         <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 me-auto">
                             <h5 class="text-uppercase mb-4 text-light">Sign up to our newsletter</h5>
 
-                            <div class="form-outline form-white mb-4">
+                            <div class="form-outline form-white mb-4" action="mailto:FFPF@info.com" method="post" enctype="text/plain">
                                 <input type="email" id="form5Example2" class="form-control" />
                                 <label class="form-label text-light" for="form5Example2">Email address</label>
                             </div>
@@ -426,17 +590,50 @@
                 <!-- Copyright -->
             </footer>
 
+            <style>
+                .scroll-left {
+                    height: 50px;
+                    overflow: hidden;
+                    position: relative;
+                    background: var(bg-dark);
+                    color: var(bg-dark);
+                    border: 1px solid white;
+                }
+
+                .scroll-left p {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    line-height: 50px;
+                    text-align: center;
+                    /* Starting position */
+                    transform: translateX(100%);
+                    /* Apply animation to this element */
+                    animation: scroll-left 15s linear infinite;
+                }
+
+                /* Move it (define the animation) */
+                @keyframes scroll-left {
+                    0% {
+                        transform: translateX(100%);
+                    }
+
+                    100% {
+                        transform: translateX(-100%);
+                    }
+                }
+            </style>
+
+            <div class="scroll-left">
+                <p id="welcomeP">Welcome to the FFPF Website! Today is</p>
+            </div>
+
         </div>
         <!-- End of .container -->
     </footer>
-    <!-- Bootstrap JavaScript Libraries
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-      </script>
-    
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-      </script> -->
+    <script src="./javaScript/script.js"></script>
+
 </body>
 
 </html>

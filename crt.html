@@ -165,77 +165,71 @@
             background-color: #caeeb1ea;
             color: red;
         }
+
+        .margin-10 {
+            margin: 1px;
+        }
+
+        #coupon-button {
+            width: auto;
+            height: 90px;
+        }
     </style>
 </head>
 
 
 <div class="hed-div margen_button3rem">
     <div class="display_flex flex_decoration-coulmn align-center justify-center text-white" style="min-height: 300px;">
-        <h1 class="font-weight-semi-bold text-uppercase margen_button1rem">Contact Us</h1>
+        <h1 class="font-weight-semi-bold text-uppercase margen_button1rem">Item Details</h1>
         <div class="flex_displayInline">
             <p class="hed-p home"><a class="home bg-hover" href="index.html">Home</a></p>
             <p class="hed-p padding-left padding-right">-</p>
-            <p class="hed-p">Contact Us</p>
+            <p class="hed-p">Item Details</p>
         </div>
     </div>
 </div>
 
-<div class="container-contactInfo align-center" style="margin: 50px;">
-    <div class="row_cont pading_right3rm">
-        <div class="col-lg-7 mb-5">
-            <div class="contact-form">
-                <div id="success"></div>
-                <form name="sentMessage" id="contactForm" novalidate="novalidate" action="mailto:FFPF@info.com" method="post" enctype="text/plain">
-                    <div class="control-group">
-                        <input type="text" class="form-control" id="name" placeholder="Your Name" required="required"
-                            data-validation-required-message="Please enter your name" aria-invalid="false">
-                        <p class="help-block text-danger"></p>
+<!-- Cart Start -->
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        <div class="col-lg-8 table-responsive mb-5">
+           
+        </div>
+        <div class="col-lg-4">
+            <form class="mb-5" action="">
+                <div class="input-group">
+                    <input type="text" class="form-control p-4" placeholder="Coupon Code">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" id="coupon-button">Apply Coupon</button>
                     </div>
-                    <div class="control-group">
-                        <input type="email" class="form-control" id="email" placeholder="Your Email" required="required"
-                            data-validation-required-message="Please enter your email" aria-invalid="false">
-                        <p class="help-block text-danger"></p>
+                </div>
+            </form>
+            <div class="card border-secondary mb-5">
+                <div class="card-header bg-secondary border-0">
+                    <h4 class="font-weight-semi-bold m-0 text-white">Cart Summary</h4>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between mb-3 pt-1">
+                        <h6 class="font-weight-medium">Subtotal</h6>
+                        <h6 class="font-weight-medium">5.00 OMR</h6>
                     </div>
-                    <div class="control-group">
-                        <input type="text" class="form-control" id="subject" placeholder="Subject" required="required"
-                            data-validation-required-message="Please enter a subject" aria-invalid="false">
-                        <p class="help-block text-danger"></p>
+                    <div class="d-flex justify-content-between">
+                        <h6 class="font-weight-medium">Shipping</h6>
+                        <h6 class="font-weight-medium">3.00 OMR</h6>
                     </div>
-                    <div class="control-group">
-                        <textarea class="form-control" rows="6" id="message" placeholder="Message" required="required"
-                            data-validation-required-message="Please enter your message"
-                            aria-invalid="false"></textarea>
-                        <p class="help-block text-danger"></p>
+                </div>
+                <div class="card-footer border-secondary bg-transparent">
+                    <div class="d-flex justify-content-between mt-2">
+                        <h5 class="font-weight-bold">Total</h5>
+                        <h5 class="font-weight-bold">28.00 OMR</h5>
                     </div>
-                    <div>
-                        <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Send
-                            Message</button>
-                    </div>
-                </form>
+                    <button class="btn btn-block btn-primary my-3 py-3">Proceed To Checkout</button>
+                </div>
             </div>
         </div>
-
-        <div class="dimenssion margen_button3rem margen_top60px" style="padding: 20px; ">
-            <h5 class="font-weight-semi-bold mb-3">Get In Touch</h5>
-            <p>Contact us to serve you better.</p>
-            <div class="d-flex flex-column mb-3">
-                <h5 class="font-weight-semi-bold mb-3">Contacts</h5>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, Muscat, Oman</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>FFPF@info.com</p>
-                <p class="mb-2"><i class="fa fa-phone-alt text-primary mr-3"></i>+968 12345678</p>
-            </div>
-        </div>
-
     </div>
-
-
-
 </div>
-
-
-
-
-
+<!-- Cart End -->
 
 <footer>
     <!-- place footer here -->

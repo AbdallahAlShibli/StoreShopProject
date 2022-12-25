@@ -182,12 +182,12 @@
     </style>
 </head>
         </div>
-
+<h1>Question 3 : Insert a plant</h1>
      <table id="myTable" border="2"></table>
      
 
      <div>Plant
- <form name="f1" method="GET" action="insertt.php">
+ <form name="f1" method="GET" action="crtt.php">
     <table>
   <tr> <td> Name : </td><td><input type="text" name="nnn"></td>  </tr>
   <tr> <td> Color : </td><td><input type="text" name="ccc"></td>  </tr>
@@ -199,7 +199,47 @@
     <input type="submit" value="Add new Plant">
      </form>
 </div>
-     <table id="myTable" border="2"></table>
+
+<?php
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$dbname = "vegetable";
+//question 1
+$n=$_GET["nnn"];
+$c=$_GET["ccc"];
+$a=$_GET["aaa"];
+$p=$_GET["ppp"];
+$conn = mysqli_connect($hostname, $username, $password, $dbname);
+if(!$conn) {
+die("Unable to connect");
+}
+$req="INSERT INTO plants (nam, color, age, price) VALUES ('$n', '$c', '$a', '$p')";
+if (mysqli_query($conn, $req)) {
+    echo"plant inserted succefully";
+    $result = mysqli_query($conn,"SELECT * FROM plants");
+echo "<table border='3'>
+<tr>
+<th>Name </th>
+<th>Color</th>
+<th>Age</th>
+<th>Price</th>
+</tr>";
+while($row = mysqli_fetch_array($result))
+{
+echo "<tr>";
+echo "<td>" . $row['nam'] . "</td>";
+echo "<td>" . $row['color'] . "</td>";
+echo "<td>" . $row['age'] . "</td>";
+echo "<td>" . $row['price'] . "</td>";
+echo "</tr>";
+}
+echo "</table>";
+} else {
+    echo "Erreur : " . $req . "<br>" . mysqli_error($conn);
+}
+mysqli_close($conn);
+?>
      </div>
                   
                 </div>
