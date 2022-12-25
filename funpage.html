@@ -321,46 +321,6 @@
         </div>
         <!-- End of .container -->
     </footer>
-    <script>
-        // Get the email input element
-        const emailInput = document.getElementById('form5Example2');
-
-        // Get the submit button element
-        const submitButton = document.querySelector('button[type="submit"]');
-
-        // Add a click event listener to the submit button
-        submitButton.addEventListener('click', function (event) {
-            // Prevent the default action of the button (submitting the form)
-            event.preventDefault();
-
-            // Get the value of the email input
-            const email = emailInput.value;
-
-            // Validate the email
-            if (!isValidEmail(email)) {
-                // If the email is invalid, show an error message
-                alert('Please enter a valid email address');
-                return;
-            }
-
-            // If the email is valid, send the newsletter signup request
-            sendNewsletterSignupRequest(email);
-        });
-
-        function isValidEmail(email) {
-            // Use a regular expression to check if the email is in the correct format
-            const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-            return emailRegex.test(email);
-        }
-
-        function sendNewsletterSignupRequest(email) {
-            // Use an HTTP request to send the newsletter signup request to the server
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', '/newsletter-signup');
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.send(`email=${encodeURIComponent(email)}`);
-        }
-    </script>
 </body>
 
 </html>

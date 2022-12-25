@@ -149,52 +149,6 @@
         </dif>
 
         <!-- Create Form -->
-        <?php
-
-        // Connect to the database
-        $hostname = "localhost";
-        $username = "admin";
-        $password = "admin";
-        $database = "my_shope";
-        
-        $conn = mysqli_connect($hostname, $username, $password, $database);
-        
-        if (!$conn) {
-          // Error handling
-          die("Connection failed: " . mysqli_connect_error());
-        }
-        
-        // Get the form data
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $age = $_POST['age'];
-        $role = $_POST['role'];
-        $recommed = $_POST['recommed'];
-        $inp = $_POST['inp'];
-        $comment = $_POST['comment'];
-        
-        // Prepare the query
-        $query = "INSERT INTO form_submissions (name, email, age, role, recommed, inp, comment) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        $stmt = mysqli_prepare($conn, $query);
-        
-        // Bind the form data to the query parameters
-        mysqli_stmt_bind_param($stmt, "ssissss", $name, $email, $age, $role, $recommed, $inp, $comment);
-        
-        // Execute the query
-        mysqli_stmt_execute($stmt);
-        
-        // Close the statement
-        mysqli_stmt_close($stmt);
-        
-        // Close the connection
-        mysqli_close($conn);
-        
-        ?>
-
-
-
-
-
         <form id="form">
 
             <!-- Details -->
@@ -364,71 +318,6 @@
         </div>
         <!-- End of .container -->
     </footer>
-    <script>
-        // Get the email input element
-        const emailInput = document.getElementById('form5Example2');
-
-        // Get the submit button element
-        const submitButton = document.querySelector('button[type="submit"]');
-
-        // Add a click event listener to the submit button
-        submitButton.addEventListener('click', function (event) {
-            // Prevent the default action of the button (submitting the form)
-            event.preventDefault();
-
-            // Get the value of the email input
-            const email = emailInput.value;
-
-            // Validate the email
-            if (isValidEmail(email)) {
-                // If the email is invalid, show an error message
-                alert('Please enter a valid email address');
-                return;
-            }
-
-            // If the email is valid, send the newsletter signup request
-            sendNewsletterSignupRequest(email);
-        });
-
-        function isValidEmail(email) {
-            // Use a regular expression to check if the email is in the correct format
-            const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-            return emailRegex.test(email);
-        }
-
-        function sendNewsletterSignupRequest(email) {
-            // Use an HTTP request to send the newsletter signup request to the server
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', '/newsletter-signup');
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.send(`email=${encodeURIComponent(email)}`);
-        }
-
-
-
-
-        document.getElementById('form').addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            // Get the form data
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var age = document.getElementById('age').value;
-            var role = document.getElementById('role').value;
-            var recommed = document.querySelector('input[name="recommed"]:checked').value;
-            var inp = [];
-            var inpElements = document.getElementsByName('inp');
-            for (var i = 0; i < inpElements.length; i++) {
-                if (inpElements[i].checked) {
-                    inp.push(inpElements[i].value);
-                }
-            }
-            var comment = document.getElementById('comment').value;
-
-            // Do something with the form data (e.g. send an AJAX request, display a message, etc.)
-        });
-
-    </script>
 </body>
 
 </html>
